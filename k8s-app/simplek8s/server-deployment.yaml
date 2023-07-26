@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: server
+  name: server
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: server
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: server
+    spec:
+      containers:
+        - image: swarntech/server:latest
+          name: server
+          ports:
+            - containerPort: 8000
+          env:
+            - name: WEATHER_API_KEY
+              value: 1eef195e3a5c0820a311deedd4bba6a8
