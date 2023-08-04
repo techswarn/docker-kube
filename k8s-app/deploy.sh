@@ -51,7 +51,6 @@ then
   docker push registry.digitalocean.com/swarn-registry/client
   cd ./../server
   echo "change dir to server and wait for a while"
-  sleep 5
   echo "push to remote server"
   docker push registry.digitalocean.com/swarn-registry/server
   echo "script complete!!"
